@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21">
+<TabPane fx:id="salarycalculator" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: silver;" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
   <tabs>
     <Tab text="Input">
       <content>
@@ -35,25 +35,182 @@
                         <Font name="Monotype Corsiva" size="24.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="190.0" layoutY="64.0" prefHeight="25.0" prefWidth="340.0" style="-fx-cursor: text;" />
-                  <ComboBox layoutX="190.0" layoutY="154.0" prefHeight="25.0" prefWidth="340.0" style="-fx-cursor: hand;" />
-                  <TextField layoutX="190.0" layoutY="244.0" prefHeight="25.0" prefWidth="340.0" />
-                  <Button layoutX="203.0" layoutY="312.0" mnemonicParsing="false" style="-fx-background-color: olive; -fx-cursor: hand;" text="Calculate" textFill="WHITE">
+                  <TextField fx:id="txt_name" layoutX="180.0" layoutY="64.0" prefHeight="25.0" prefWidth="340.0" style="-fx-cursor: text;" />
+                  <ComboBox fx:id="chb_rank" layoutX="180.0" layoutY="154.0" prefHeight="25.0" prefWidth="340.0" style="-fx-cursor: hand;" />
+                  <TextField fx:id="txtday" layoutX="180.0" layoutY="244.0" prefHeight="25.0" prefWidth="340.0" />
+                  <Button fx:id="calculate_btn" layoutX="203.0" layoutY="312.0" mnemonicParsing="false" onAction="#calculate_click" style="-fx-background-color: olive; -fx-cursor: hand;" text="Calculate" textFill="WHITE">
                      <font>
                         <Font name="SimSun-ExtB" size="16.0" />
                      </font>
                   </Button>
-                  <Button layoutX="351.0" layoutY="312.0" mnemonicParsing="false" style="-fx-background-color: gold; -fx-cursor: hand;" text="Reset" textFill="WHITE">
+                  <Button fx:id="btn_reset" layoutX="351.0" layoutY="312.0" mnemonicParsing="false" onAction="#reset_click" style="-fx-background-color: gold; -fx-cursor: hand;" text="Reset" textFill="WHITE">
                      <font>
                         <Font name="SimSun-ExtB" size="16.0" />
                      </font>
                   </Button>
+                  <Label layoutX="530.0" layoutY="241.0" text="Hari">
+                     <font>
+                        <Font name="Monotype Corsiva" size="24.0" />
+                     </font>
+                  </Label>
                </children></AnchorPane>
       </content>
     </Tab>
     <Tab text="Output">
       <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #d17dff;">
+               <children>
+                  <Label layoutX="5.0" layoutY="30.0" text="Nama Pegawai">
+                     <font>
+                        <Font name="Monotype Corsiva" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="5.0" layoutY="60.0" text="Jabatan">
+                     <font>
+                        <Font name="Monotype Corsiva" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="5.0" layoutY="90.0" text="Gajipokok">
+                     <font>
+                        <Font name="Monotype Corsiva" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="5.0" layoutY="120.0" text="Masuk">
+                     <font>
+                        <Font name="Monotype Corsiva" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="5.0" layoutY="150.0" text="Bonus">
+                     <font>
+                        <Font name="Monotype Corsiva" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="5.0" layoutY="180.0" text="--------------------------------------------------------------------------- +">
+                     <font>
+                        <Font name="Monotype Corsiva" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="110.0" layoutY="30.0" text=":">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="110.0" layoutY="60.0" text=":">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="110.0" layoutY="90.0" text=":">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="110.0" layoutY="120.0" text=":">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="110.0" layoutY="150.0" text=":">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Name" layoutX="125.0" layoutY="30.0" text="Label">
+                     <font>
+                        <Font name="Monotype Corsiva" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Rank" layoutX="125.0" layoutY="60.0" text="Label">
+                     <font>
+                        <Font name="Monotype Corsiva" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Gajipokok" layoutX="125.0" layoutY="90.0" text="Label">
+                     <font>
+                        <Font name="Monotype Corsiva" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Day" layoutX="125.0" layoutY="120.0" text="Label">
+                     <font>
+                        <Font name="Monotype Corsiva" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="181.0" layoutY="120.0" text="Hari">
+                     <font>
+                        <Font name="Monotype Corsiva" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Bonus" layoutX="125.0" layoutY="150.0" text="Label">
+                     <font>
+                        <Font name="Monotype Corsiva" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="237.0" layoutY="5.0" text="Invoice">
+                     <font>
+                        <Font name="Voyager Heavy" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="5.0" layoutY="210.0" text="Gaji kotor">
+                     <font>
+                        <Font name="Monotype Corsiva" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="5.0" layoutY="240.0" text="Pajak">
+                     <font>
+                        <Font name="Monotype Corsiva" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="5.0" layoutY="270.0" text="--------------------------------------------------------------------------- +">
+                     <font>
+                        <Font name="Monotype Corsiva" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="5.0" layoutY="300.0" text="Gaji Besih">
+                     <font>
+                        <Font name="Monotype Corsiva" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="110.0" layoutY="217.0" text=":">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="GajiPokok" layoutX="125.0" layoutY="217.0" text="Label">
+                     <font>
+                        <Font name="Monotype Corsiva" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="110.0" layoutY="245.0" text=":">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Pajak" layoutX="125.0" layoutY="245.0" text="Label">
+                     <font>
+                        <Font name="Monotype Corsiva" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="110.0" layoutY="300.0" text=":">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="GajiBersih" layoutX="125.0" layoutY="300.0" text="Label">
+                     <font>
+                        <Font name="Monotype Corsiva" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="calculate_btn1" layoutX="570.0" layoutY="-1.0" mnemonicParsing="false" onAction="#calculate_click" style="-fx-background-color: red; -fx-cursor: hand;" text="X" textFill="WHITE">
+                     <font>
+                        <Font name="SimSun-ExtB" size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="calculate_btn11" layoutX="540.0" mnemonicParsing="false" onAction="#calculate_click" style="-fx-background-color: lightblue; -fx-cursor: hand;" text="&lt;" textFill="WHITE">
+                     <font>
+                        <Font name="SimSun-ExtB" size="16.0" />
+                     </font>
+                  </Button>
+               </children></AnchorPane>
       </content>
     </Tab>
   </tabs>
