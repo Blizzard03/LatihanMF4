@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<TabPane fx:id="salarycalculator" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: silver;" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<TabPane fx:id="salarycalculator" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: silver;" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mariq.rasyid.latihanmf4.FXMLSalaryCalculatorController">
   <tabs>
-    <Tab text="Input">
+    <Tab fx:id="input" text="Input">
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: cyan;">
                <children>
@@ -56,7 +56,7 @@
                </children></AnchorPane>
       </content>
     </Tab>
-    <Tab text="Output">
+    <Tab fx:id="output" onSelectionChanged="#event" text="Output">
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #d17dff;">
                <children>
@@ -160,7 +160,7 @@
                         <Font name="Monotype Corsiva" size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="5.0" layoutY="270.0" text="--------------------------------------------------------------------------- +">
+                  <Label layoutX="5.0" layoutY="270.0" text="--------------------------------------------------------------------------- -">
                      <font>
                         <Font name="Monotype Corsiva" size="18.0" />
                      </font>
@@ -175,7 +175,7 @@
                         <Font name="Times New Roman" size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="GajiPokok" layoutX="125.0" layoutY="217.0" text="Label">
+                  <Label fx:id="GajiKotor" layoutX="125.0" layoutY="217.0" text="Label">
                      <font>
                         <Font name="Monotype Corsiva" size="18.0" />
                      </font>
@@ -200,12 +200,12 @@
                         <Font name="Monotype Corsiva" size="18.0" />
                      </font>
                   </Label>
-                  <Button fx:id="calculate_btn1" layoutX="570.0" layoutY="-1.0" mnemonicParsing="false" onAction="#calculate_click" style="-fx-background-color: red; -fx-cursor: hand;" text="X" textFill="WHITE">
+                  <Button fx:id="close_btn" layoutX="570.0" layoutY="-1.0" mnemonicParsing="false" onAction="#close_click" style="-fx-background-color: red; -fx-cursor: hand;" text="X" textFill="WHITE">
                      <font>
                         <Font name="SimSun-ExtB" size="16.0" />
                      </font>
                   </Button>
-                  <Button fx:id="calculate_btn11" layoutX="540.0" mnemonicParsing="false" onAction="#calculate_click" style="-fx-background-color: lightblue; -fx-cursor: hand;" text="&lt;" textFill="WHITE">
+                  <Button fx:id="back_btn" layoutX="540.0" mnemonicParsing="false" onAction="#back_click" style="-fx-background-color: lightblue; -fx-cursor: hand;" text="&lt;" textFill="WHITE">
                      <font>
                         <Font name="SimSun-ExtB" size="16.0" />
                      </font>
