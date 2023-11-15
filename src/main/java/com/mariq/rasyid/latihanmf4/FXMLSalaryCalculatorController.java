@@ -198,7 +198,7 @@ public class FXMLSalaryCalculatorController implements Initializable {
             chb_rank.getSelectionModel().select(0);
             txtday.setText(null);
         }
-        txt_name.requestFocus();
+        txt_name.isFocused();
     }
 
     @FXML
@@ -221,6 +221,7 @@ public class FXMLSalaryCalculatorController implements Initializable {
         txt_name.setText(null);
         chb_rank.getSelectionModel().select(0);
         txtday.setText(null);
+        salarycalculator.getSelectionModel().select(0);
     }
 
 }
