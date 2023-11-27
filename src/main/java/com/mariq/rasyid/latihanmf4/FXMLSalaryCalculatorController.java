@@ -90,6 +90,7 @@ public class FXMLSalaryCalculatorController implements Initializable {
                 "Supervisor",
                 "Staff"));
         chb_rank.getSelectionModel().select(0);
+        output.setDisable(true);
 
     }
 
@@ -172,6 +173,8 @@ public class FXMLSalaryCalculatorController implements Initializable {
             Pajak.setText(formater.format(tax_salary));
             GajiBersih.setText(formater.format(tot_tax_salary));
             salarycalculator.getSelectionModel().select(1);
+            input.setDisable(true);
+            output.setDisable(false);
         }
     }
 
@@ -222,6 +225,9 @@ public class FXMLSalaryCalculatorController implements Initializable {
         chb_rank.getSelectionModel().select(0);
         txtday.setText(null);
         salarycalculator.getSelectionModel().select(0);
+        input.setDisable(false);
+        output.setDisable(true);
+
     }
 
 }
