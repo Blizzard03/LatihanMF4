@@ -109,7 +109,7 @@ public class FXMLSalaryCalculatorController implements Initializable {
             mdl.setDays(Integer.parseInt(txtday.getText()));
             mdl.setRank(chb_rank.getSelectionModel().getSelectedIndex());
             double main_salary = 0, tax = 0, bonus = 0, bonus_cal = 0;
-            String rank = null;
+            String rank = "";
             switch (mdl.getRank()) {
                 case 1: {
                     rank = "Manager";
@@ -154,7 +154,7 @@ public class FXMLSalaryCalculatorController implements Initializable {
                     break;
                 }
                 default: {
-                    rank = null;
+                    rank = "";
                     bonus = 0;
                     main_salary = 0;
                     Rank.setText(rank);
@@ -197,9 +197,9 @@ public class FXMLSalaryCalculatorController implements Initializable {
         Alert art = new Alert(Alert.AlertType.CONFIRMATION, "Apakah data ini akan direset ulang", ButtonType.YES, ButtonType.NO);
         art.showAndWait();
         if (art.getResult() == ButtonType.YES) {
-            txt_name.setText(null);
+            txt_name.setText("");
             chb_rank.getSelectionModel().select(0);
-            txtday.setText(null);
+            txtday.setText("");
         }
         txt_name.isFocused();
     }
@@ -221,9 +221,9 @@ public class FXMLSalaryCalculatorController implements Initializable {
         Pajak.setText("Label");
         GajiBersih.setText("Label");
         GajiKotor.setText("Label");
-        txt_name.setText(null);
+        txt_name.setText("");
         chb_rank.getSelectionModel().select(0);
-        txtday.setText(null);
+        txtday.setText("");
         salarycalculator.getSelectionModel().select(0);
         input.setDisable(false);
         output.setDisable(true);
